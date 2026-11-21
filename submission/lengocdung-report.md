@@ -138,7 +138,3 @@ Tôi cũng đã sửa các tag thiếu/sai camera ở A05, A13, A16; kiểm lạ
 **Liên hệ với model:** lane mang thông tin vị trí và hình học để mô hình học quan hệ giữa xe với các vạch làn. Nếu vạch bên phải bị gán L1, mô hình có thể học sai phía của làn; tôi đã sửa trường hợp này thành R2. Nếu ảnh front bị gán camera fisheye, dữ liệu có thể bị phân nhóm sai khi huấn luyện hoặc đánh giá; vì vậy tôi đã sửa tag camera của A13 về `front`.
 
 Tôi sử dụng trợ lý AI để đọc tài liệu, kiểm cấu trúc XML, thống kê nhãn, hỗ trợ rà ảnh và soạn báo cáo/QC; các xác nhận của coach và bạn kiểm được ghi theo thông tin thực tế. Tôi không dùng bài học viên khác làm GT và không tự công bố điểm khi chưa có kết quả chấm.
-
-## 8. Tùy chọn — Từ polyline đến đích row-anchor
-
-Chưa thực hiện hoạt động tự tính và đối chiếu row-anchor với bạn kiểm. Phần này không tính điểm theo rubric; không điền số liệu khi chưa đo.
