@@ -1,16 +1,19 @@
 # Phiếu QC 1 — Road v1.0
 
-Lô được kiểm: **Nguyễn Bảo Khánh**.  
-Người kiểm/lập kết quả thực tế: **Trợ lý AI theo yêu cầu Lê Ngọc Dũng**, kiểm XML và ảnh gốc.  
-Học viên phát hành: **Lê Ngọc Dũng**, có trợ lý AI hỗ trợ kiểm và soạn; phát hành theo yêu cầu nộp bài ngày 21/11/2026.  
-Ngày kiểm: 21/11/2026. Guideline: Road v1.0.  
-File: nguyenbaokhanh-front.zip; nguyenbaokhanh-fisheye.zip. Revision: chưa có manifest của Khánh; định danh trực tiếp bằng SHA256 bên dưới.
-Số ảnh kiểm: **6** (A01, A06, A12, B02, B03, B06), 0 ảnh thêm trong mẫu. Số nhãn đã kiểm (shape + tag): **103**.
+**Lô được kiểm (học viên):** Nguyễn Bảo Khánh<br>
+**Người kiểm (học viên):** Lê Ngọc Dũng — 2A202603103<br>
+**Ngày kiểm:** 21/11/2026<br>
+**Phiên bản guideline:** Road v1.0, kèm hướng dẫn giảng viên về cách vẽ vạch đôi<br>
+**File được kiểm:** `nguyenbaokhanh-front.zip`, `nguyenbaokhanh-fisheye.zip`<br>
+**Revision của lô Khánh:** chưa được cung cấp manifest; hai file được định danh bằng SHA256 tại cuối phiếu.<br>
+**Số ảnh kiểm:** 6 ảnh bắt buộc — A01, A06, A12, B02, B03, B06; **0 ảnh thêm**.<br>
+**Số nhãn đã kiểm (shape + tag): 103**.
 
-Phương pháp: kiểm 2 ZIP toàn lô về cấu trúc; đối chiếu bằng mắt tất cả shape/tag trong 6 ảnh mẫu với ảnh gốc. Không có GT nên không xác nhận độ lệch tối đa 5 px, điểm số hoặc toàn bộ ca bị che. 0 trong bảng nghĩa là chưa ghi nhận lỗi xác định ở lần kiểm này, không có nghĩa đã chứng minh mọi nhãn đúng GT.
+Tôi sử dụng trợ lý AI hỗ trợ đọc XML, dựng ảnh đối chiếu và soạn phiếu. Kết quả dưới đây dựa trên file và ảnh gốc của lô Khánh, không lấy bài Dũng làm GT. Không có GT để xác nhận phép đo độ lệch tối đa 5 px; số 0 trong bảng nghĩa là chưa phát hiện lỗi xác định trong phạm vi kiểm, không phải chứng nhận mọi nhãn khớp GT.
 
 ## Tổng hợp theo mã
-| Mã | Loại lỗi | Số mục kiểm | Số lỗi xác định | Mức |
+
+| Mã | Loại lỗi | Số mục kiểm | Số lỗi | Mức |
 | --- | --- | ---: | ---: | --- |
 | QC1-01 tag camera | sai thuộc tính / bỏ sót | 6 | 0 | nặng |
 | QC1-02 đủ L1, R1 | bỏ sót | 8 | 1 | nặng |
@@ -25,46 +28,59 @@ Phương pháp: kiểm 2 ZIP toàn lô về cấu trúc; đối chiếu bằng m
 | QC1-11 fisheye | sai phạm vi / sai thuộc tính | 41 | 0 | chính |
 | QC1-12 file | lỗi file | 2 | 0 | nhẹ / nặng |
 
-Đơn vị số mục kiểm: QC1-01 = 6 tag camera; QC1-02 = 8 phía L1/R1 của 3 ảnh front và B03 rear (không suy ra vạch bắt buộc khi không thấy); QC1-03–06 = lane; QC1-07 = vùng và curb; QC1-08 = đèn; QC1-09 = đèn + biển; QC1-10 = biển; QC1-11 = shape của 3 ảnh fisheye; QC1-12 = 2 ZIP. Cùng nhãn có thể được kiểm theo nhiều mã; mẫu số tính tỉ lệ chỉ đếm shape+tag một lần.
+**Đơn vị kiểm:** QC1-01 là 6 tag camera; QC1-02 là 8 phía L1/R1 của A01/A06/A12 và B03 (không bắt buộc vẽ khi không có vạch thật). QC1-03–06 đếm lane; QC1-07 đếm drivable/curb/crosswalk; QC1-08 đếm đèn; QC1-09 đếm đèn và biển; QC1-10 đếm biển; QC1-11 đếm shape của 3 ảnh fisheye; QC1-12 đếm ZIP. Một nhãn có thể được kiểm theo nhiều mã, nhưng mẫu số tỉ lệ chỉ đếm shape + tag một lần.
 
 ## Danh sách lỗi (mỗi lỗi một dòng)
-| # | Mã | Ảnh | Nhãn / số thứ tự trong XML | Mức | Mô tả |
+
+| # | Mã | Ảnh | Nhãn (label, định vị trong XML) | Mức | Mô tả ngắn / đề nghị sửa |
 | --- | --- | --- | --- | --- | --- |
-| 1 | QC1-02 | A12 | lane: thiếu L1 | nặng | Ảnh thấy vạch trắng phía trái làn; XML chỉ có lane R1 (#6), chưa có L1. Không tự lấy bài Dũng làm GT. |
-| 2 | QC1-06 | A06 | lane #14 | chính | Polyline đặt trên vạch sơn trắng nhưng color=yellow; cần sửa white và kiểm style theo đoạn sơn thật. |
-| 3 | QC1-09 | A06 | traffic_sign #2 | chính | Biển ONE WAY đang group=supplementary; theo bảng nhóm biển trong docs phải mandatory. |
+| 1 | QC1-02 | A12 | `lane`: thiếu L1; XML chỉ có R1 (#6) | nặng | Phía trái làn có vạch sơn nhìn thấy nhưng chưa có polyline L1. Bổ sung L1 theo tâm vạch, từ gần ra xa. |
+| 2 | QC1-06 | A06 | `lane` #14, bắt đầu khoảng (441.2; 416.5) | chính | Đường đặt trên vạch trắng nhưng `color=yellow`. Sửa `white` và kiểm lại `style` theo các đoạn sơn thật. |
+| 3 | QC1-09 | A06 | `traffic_sign` #2, hộp khoảng (660;214)–(709;240) | chính | Biển ONE WAY đang `group=supplementary`. Theo bảng nhóm biển trong docs, biển bắt buộc hướng đi thuộc `mandatory`. |
 
-Số # là thứ tự shape do parser xuất ra, không phải ID hiển thị trên CVAT. Dùng loại nhãn, vị trí và ảnh minh chứng để tìm đúng đối tượng.
+Các số # là thứ tự shape do parser đọc từ XML, không phải ID giao diện CVAT. Tọa độ trên ảnh gốc giúp xác định đúng đối tượng khi ID thay đổi.
 
-## Ca mơ hồ
-| Ảnh | Câu hỏi cho lead | Lời đáp hiện có |
+## Ca mơ hồ và xác nhận
+
+| Ảnh | Câu hỏi cho lead | Lời đáp / xử lý |
 | --- | --- | --- |
-| A01 | Hai lane L2 của vạch đôi có được giữ? | Theo lời học viên truyền đạt: thầy cho vẽ 2 lane, cả hai kind=double; đã ghi nguồn hướng dẫn, không tính lỗi xác định. |
-| A06 | Không thấy R1 rõ có được miễn QC1-02? | Chưa có xác nhận coach; không tự vẽ thêm vạch. |
-| A12 | Crosswalk thấy rõ nhưng không có polygon; kế hoạch ảnh có yêu cầu không? | Chưa có bảng kế hoạch trong docs; ghi ca chờ xác nhận, chưa cộng lỗi bỏ sót vào tỉ lệ. |
-| B03 | Quy ước position theo làn xe khi nhìn từ camera sau | Cần lead đối chiếu; chưa dùng bài học viên khác làm GT. |
-| B06 | Vạch cạnh ray/đảo và vùng alternative có đúng loại không? | Cần lead xác nhận, không tự thay nhãn. |
+| A01 | Hai polyline của vạch đôi có được giữ? | Giảng viên cho phép hai lane, mỗi đường `kind=double`; không tính cảnh báo trùng L2 này thành lỗi. |
+| A06 | Không thấy R1 có phải vẽ thêm không? | Coach đã xác nhận ngoại lệ không thấy vạch ở cảnh A06; không vẽ vạch giả. Không đưa ca này vào lỗi QC1-02 xác định. |
+| A12 | Crosswalk nhìn thấy nhưng không có polygon có thuộc nhóm nhãn yêu cầu cho ảnh không? | Chưa có bảng kế hoạch riêng từng ảnh trong docs; chờ lead đối chiếu, chưa cộng thêm lỗi bỏ sót này. |
+| B03 | Position của lane khi nhìn bằng camera sau | Ghi nhận để lead đối chiếu quy ước; chưa chấm thêm lỗi position từ suy đoán. |
+| B06 | Phân biệt lane, vạch cạnh ray/đảo và vùng alternative | Chờ lead đối chiếu chức năng phần đường; không tự chuyển nhãn. |
+
+**Ghi chú ngoại lệ cùng bộ ảnh:** coach đã xác nhận không thấy vạch tại A05 (L1/R1), A06, A09 và A14 (R1), theo xác nhận của học viên ngày 21/11/2026. Mẫu 6 ảnh của phiếu này chỉ có A06 trong nhóm đó. Ngoại lệ không áp dụng cho L1 ở A12, vì vạch này nhìn thấy.
 
 ## Quyết định
-Lỗi nặng xác định: **1**. Lỗi chính xác định: **2 / 103 nhãn = 1.94%**. Lỗi nhẹ xác định: **0**. Có các ca chờ lead như bảng trên.
-**Kết luận của lần kiểm có trợ lý: Rework.** Có ít nhất một lỗi nặng xác định nên áp dụng Rework; không dùng Hold để thay thế khi đã có lỗi nặng. Đây chưa phải quyết định chính thức của coach hoặc xác nhận của học viên kiểm chéo.
 
-## Bằng chứng và phạm vi
-| Ảnh | Shape | Tag | Tổng nhãn | Ghi chú |
+- **Lỗi nặng:** 1.
+- **Lỗi chính:** 2 / 103 nhãn = **1,94%**.
+- **Lỗi nhẹ:** 0 lỗi xác định trong phạm vi kiểm.
+- **Ca chờ lead:** 3 — A12 (phạm vi crosswalk), B03 và B06.
+- **Quyết định: Rework.**
+
+**Lý do:** còn một lỗi nặng QC1-02 ở A12 nên phải Rework, mặc dù tỉ lệ lỗi chính 1,94% không vượt 5%. Mẫu số là số nhãn đã kiểm, không phải số ảnh. Các ca mơ hồ không làm thay đổi kết luận Rework khi đã có lỗi nặng.
+
+**Đề nghị xử lý:** Khánh bổ sung L1 tại A12, sửa màu lane và nhóm biển tại A06, sau đó export lại hai ZIP, tạo manifest có revision phù hợp và gửi kiểm lại. Phiếu này áp dụng cho hai file có SHA256 bên dưới, không tự kết luận bản sửa chưa nhận là đã đạt.
+
+## Phạm vi và bằng chứng kiểm
+
+| Ảnh | Shape | Tag | Tổng nhãn | Kết quả nổi bật |
 | --- | ---: | ---: | ---: | --- |
-| A01 | 12 | 4 | 16 | Đã xem XML và overlay ảnh gốc |
-| A06 | 15 | 4 | 19 | Đã xem XML và overlay ảnh gốc |
-| A12 | 11 | 4 | 15 | Đã xem XML và overlay ảnh gốc |
-| B02 | 9 | 4 | 13 | Đã xem XML và overlay ảnh gốc |
-| B03 | 22 | 4 | 26 | Đã xem XML và overlay ảnh gốc |
-| B06 | 10 | 4 | 14 | Đã xem XML và overlay ảnh gốc |
+| A01 | 12 | 4 | 16 | Chưa phát hiện lỗi xác định trong phạm vi đã rà; đã áp dụng hướng dẫn thầy về vạch đôi. |
+| A06 | 15 | 4 | 19 | Hai lỗi chính: màu lane và nhóm biển ONE WAY. |
+| A12 | 11 | 4 | 15 | Một lỗi nặng: thiếu L1 nhìn thấy. |
+| B02 | 9 | 4 | 13 | Đã rà XML/ảnh; chưa khẳng định độ lệch 5 px khi không có GT. |
+| B03 | 22 | 4 | 26 | Có ca position camera sau chờ lead. |
+| B06 | 10 | 4 | 14 | Có ca chức năng vạch/vùng lái chờ lead. |
+| **Tổng** | **79** | **24** | **103** | |
 
-Chưa thể chỉ định một ảnh "không lỗi tuyệt đối" khi chưa có GT. A01 không có lỗi xác định trong lần rà này sau khi ghi ngoại lệ vạch đôi, nhưng vẫn chưa chứng minh độ lệch 5 px.
-
-Phần lỗi trên là kết quả tối thiểu đã xác định, không dùng số cảnh báo lint chia cho số ảnh để tính tỉ lệ. Không gửi tin, không giả chữ ký hoặc lời xác nhận của Khánh.
+A01 là ảnh không ghi nhận lỗi xác định để coach chọn đối chiếu; nhận xét này giới hạn trong phạm vi kiểm nêu trên, không thay cho chấm GT. Ba lỗi trong danh sách có đủ mã, ảnh, nhãn, mức và vị trí để kiểm lại.
 
 ## Định danh file đã kiểm
+
 | File | SHA256 |
 | --- | --- |
-| nguyenbaokhanh-front.zip | `deb722daf2b7a5dfbf09b21d6f7be8e95cca74a87f5d958f5e31126946816fa0` |
-| nguyenbaokhanh-fisheye.zip | `0c68fa12f8465a45b33428943bd382f35b5b97d2b917de47673b48eb6382baec` |
+| `nguyenbaokhanh-front.zip` | `deb722daf2b7a5dfbf09b21d6f7be8e95cca74a87f5d958f5e31126946816fa0` |
+| `nguyenbaokhanh-fisheye.zip` | `0c68fa12f8465a45b33428943bd382f35b5b97d2b917de47673b48eb6382baec` |
