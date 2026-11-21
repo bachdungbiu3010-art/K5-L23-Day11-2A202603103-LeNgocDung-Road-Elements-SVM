@@ -7,3 +7,7 @@ submissions/
 out/
 *.zip
 .env
+
+# Only the two requested annotation-only submission archives are tracked.
+!submission/lengocdung-front.zip
+!submission/lengocdung-fisheye.zip

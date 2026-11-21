@@ -1,3 +1,29 @@
+# Bài nộp Ngày 11 — Lê Ngọc Dũng
+
+Mã học viên: **2A202603103**. Guideline: **Road v1.0**, kèm hướng dẫn thầy về vạch đôi. Hoàn thiện hồ sơ ngày **21/11/2026**.
+
+## Hồ sơ bàn giao
+
+| File | Nội dung |
+| --- | --- |
+| [lengocdung-front.zip](submission/lengocdung-front.zip) | 16 ảnh A01–A16, CVAT for images 1.1, chỉ nhãn |
+| [lengocdung-fisheye.zip](submission/lengocdung-fisheye.zip) | 12 ảnh B01–B12, CVAT for images 1.1, chỉ nhãn |
+| [lengocdung-manifest.json](submission/lengocdung-manifest.json) | Revision 1, số lượng và SHA256 |
+| [lengocdung-qc1-for-nguyenbaokhanh.md](submission/lengocdung-qc1-for-nguyenbaokhanh.md) | QC 6 ảnh bài Nguyễn Bảo Khánh, 103 nhãn |
+| [lengocdung-report.md](submission/lengocdung-report.md) | Báo cáo cá nhân và phản hồi QC |
+
+Hai ZIP không chứa ảnh. Bộ nhãn có **28 ảnh, 289 shape, 112 tag**. Bản nộp đã sửa position một lane bên phải A12 từ L1 sang R2; các tọa độ giữ nguyên. File xuất gốc lưu tại máy học viên.
+
+**Hướng dẫn vạch đôi:** theo thông tin học viên truyền đạt từ thầy, giữ hai polyline lane, mỗi đường `kind=double`. Các cảnh báo tương ứng được chú thích, không xóa log.
+
+Khánh đã xác nhận phiếu và các job đã completed theo thông báo của học viên. Phiếu được trợ lý hỗ trợ soạn, nguồn xác nhận được ghi rõ; không tạo chữ ký giả. Phiếu xác nhận lưu lịch sử trước khi sửa A12; chưa tự ghi Release cho bản ZIP sau sửa.
+
+**Giới hạn còn công khai:** lint còn 21 cảnh báo (5 nặng về thiếu vạch, 16 chính), trong đó 4 cảnh báo trùng liên quan vạch đôi đã có ghi chú hướng dẫn thầy. Các ca thật sự không thấy L1/R1 cần coach xác nhận, không vẽ vạch giả để làm sạch lint. Chưa có GT/điểm chấm chính thức. Xem [biên bản chốt](review-notes/CAN_XU_LY_TRUOC_NOP.md).
+
+Ảnh dataset và minh chứng có ảnh dataset lưu cục bộ, cung cấp qua kênh coach được chỉ định; không đưa vào repo. Việc bàn giao GitHub không tự chứng minh đã bấm nộp trên LMS.
+
+---
+
 # Ngày 11 · Road Elements & SVM
 
 > Lab cá nhân, AI20K K5. Bạn gán nhãn phần tử đường theo guideline Road v1.0 trên CVAT của lớp: 12 ảnh camera trước BDD100K (A01–A12) và 8 ảnh fisheye WoodScape (B01–B08) là bắt buộc. Sau đó bạn kiểm lô của một bạn khác bằng Phiếu QC 1 và quyết định Release, Hold hoặc Rework. Nếu xong sớm, làm thêm ảnh A13–A16 và B09–B12 để lấy điểm thưởng. Không đưa ảnh lên app.cvat.ai.

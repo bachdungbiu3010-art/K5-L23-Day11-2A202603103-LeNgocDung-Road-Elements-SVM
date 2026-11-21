@@ -1,0 +1,149 @@
+[
+  {
+    "image": "A01",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position L2: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A04",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position L1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A05",
+    "code": "QC1-02",
+    "severity": "critical",
+    "ref": "lane",
+    "message": "chưa có L1 (bỏ qua nếu thật sự không thấy vạch)"
+  },
+  {
+    "image": "A05",
+    "code": "QC1-02",
+    "severity": "critical",
+    "ref": "lane",
+    "message": "chưa có R1 (bỏ qua nếu thật sự không thấy vạch)"
+  },
+  {
+    "image": "A06",
+    "code": "QC1-02",
+    "severity": "critical",
+    "ref": "lane",
+    "message": "chưa có R1 (bỏ qua nếu thật sự không thấy vạch)"
+  },
+  {
+    "image": "A08",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position L1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A09",
+    "code": "QC1-02",
+    "severity": "critical",
+    "ref": "lane",
+    "message": "chưa có R1 (bỏ qua nếu thật sự không thấy vạch)"
+  },
+  {
+    "image": "A11",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position L1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A13",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position R1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A14",
+    "code": "QC1-02",
+    "severity": "critical",
+    "ref": "lane",
+    "message": "chưa có R1 (bỏ qua nếu thật sự không thấy vạch)"
+  },
+  {
+    "image": "A14",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position L1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "A15",
+    "code": "QC1-05",
+    "severity": "major",
+    "ref": "lane",
+    "message": "2 polyline cùng position R1: vạch đứt có bị tách không?"
+  },
+  {
+    "image": "B02",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_light#5@(1074,78)",
+    "message": "gợi ý edge_zone = bật (tâm box ngoài 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B03",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#1@(1129,360)",
+    "message": "gợi ý edge_zone = bật (tâm box ngoài 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B03",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#14@(172,300)",
+    "message": "gợi ý edge_zone = tắt (tâm box trong 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B03",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#15@(260,292)",
+    "message": "gợi ý edge_zone = tắt (tâm box trong 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B03",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#16@(263,304)",
+    "message": "gợi ý edge_zone = tắt (tâm box trong 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B04",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_light#3@(1068,240)",
+    "message": "gợi ý edge_zone = tắt (tâm box trong 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B05",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#1@(420,5)",
+    "message": "gợi ý edge_zone = bật (tâm box ngoài 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B05",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "traffic_sign#6@(353,39)",
+    "message": "gợi ý edge_zone = bật (tâm box ngoài 80 % bán kính; tự kiểm lại)"
+  },
+  {
+    "image": "B09",
+    "code": "QC1-11",
+    "severity": "major",
+    "ref": "lane#4@(558,386)",
+    "message": "chỉ 3 điểm: trên fisheye hãy đặt điểm theo cung"
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-21",
+  "author": "Trợ lý theo yêu cầu hoàn chỉnh hồ sơ của Lê Ngọc Dũng",
+  "source_export_preserved": true,
+  "changes": [
+    {
+      "image": "A12_c0f978fa-9b4e623f.jpg",
+      "label": "lane",
+      "points_start": "663.34,417.41",
+      "attribute": "position",
+      "before": "L1",
+      "after": "R2",
+      "reason": "Đường nằm phía phải R1, không phải L1; không thay tọa độ hay kind.",
+      "cvat_synced": false
+    }
+  ],
+  "confirmations": [
+    {
+      "item": "Khánh đã xác nhận phiếu QC",
+      "source": "Lê Ngọc Dũng thông báo trong chat ngày 21/11/2026; không có chữ ký do trợ lý tạo."
+    },
+    {
+      "item": "Các job đã completed",
+      "source": "Lê Ngọc Dũng thông báo trong chat ngày 21/11/2026; chưa có ảnh trạng thái mới."
+    }
+  ]
+}
