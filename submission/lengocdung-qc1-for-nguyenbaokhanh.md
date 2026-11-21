@@ -4,7 +4,7 @@ Lô được kiểm: **Nguyễn Bảo Khánh**.
 Người kiểm/lập kết quả thực tế: **Trợ lý AI theo yêu cầu Lê Ngọc Dũng**, kiểm XML và ảnh gốc.  
 Học viên phát hành: **Lê Ngọc Dũng**, có trợ lý AI hỗ trợ kiểm và soạn; phát hành theo yêu cầu nộp bài ngày 21/11/2026.  
 Ngày kiểm: 21/11/2026. Guideline: Road v1.0.  
-File: nguyenbaokhanh-front.zip; nguyenbaokhanh-fisheye.zip. Revision: chưa có manifest Khánh, định danh bằng SHA256 trong source_provenance.json.
+File: nguyenbaokhanh-front.zip; nguyenbaokhanh-fisheye.zip. Revision: chưa có manifest của Khánh; định danh trực tiếp bằng SHA256 bên dưới.
 Số ảnh kiểm: **6** (A01, A06, A12, B02, B03, B06), 0 ảnh thêm trong mẫu. Số nhãn đã kiểm (shape + tag): **103**.
 
 Phương pháp: kiểm 2 ZIP toàn lô về cấu trúc; đối chiếu bằng mắt tất cả shape/tag trong 6 ảnh mẫu với ảnh gốc. Không có GT nên không xác nhận độ lệch tối đa 5 px, điểm số hoặc toàn bộ ca bị che. 0 trong bảng nghĩa là chưa ghi nhận lỗi xác định ở lần kiểm này, không có nghĩa đã chứng minh mọi nhãn đúng GT.
@@ -62,3 +62,9 @@ Lỗi nặng xác định: **1**. Lỗi chính xác định: **2 / 103 nhãn = 1
 Chưa thể chỉ định một ảnh "không lỗi tuyệt đối" khi chưa có GT. A01 không có lỗi xác định trong lần rà này sau khi ghi ngoại lệ vạch đôi, nhưng vẫn chưa chứng minh độ lệch 5 px.
 
 Phần lỗi trên là kết quả tối thiểu đã xác định, không dùng số cảnh báo lint chia cho số ảnh để tính tỉ lệ. Không gửi tin, không giả chữ ký hoặc lời xác nhận của Khánh.
+
+## Định danh file đã kiểm
+| File | SHA256 |
+| --- | --- |
+| nguyenbaokhanh-front.zip | `deb722daf2b7a5dfbf09b21d6f7be8e95cca74a87f5d958f5e31126946816fa0` |
+| nguyenbaokhanh-fisheye.zip | `0c68fa12f8465a45b33428943bd382f35b5b97d2b917de47673b48eb6382baec` |
